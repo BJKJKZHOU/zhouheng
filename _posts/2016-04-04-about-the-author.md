@@ -2,8 +2,8 @@
 layout: post
 title: "About the Author"
 author: "Paul Le"
-categories: home
-tags: [sample]
+categories: jottings
+tags: [jottings]
 image: cuba-2.jpg
 ---
 
