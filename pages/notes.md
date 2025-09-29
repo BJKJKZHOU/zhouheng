@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Learning Resources
-category: resources
-permalink: /resources
+title: 文档笔记
+category: notes
+permalink: /notes
 ---
