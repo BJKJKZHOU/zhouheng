@@ -4,4 +4,46 @@ title: 关于
 permalink: /about
 ---
 
-Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused publishing platform for your publication site or blog. You can find everything you need to get started under documentation. For more information on how to install and use this theme, check out [the documentation]({{ site.github.url }}{% post_url 2016-10-10-getting-started %}).
+## 欢迎访问我的个人网站！
+
+## 网站简介
+
+本网站使用[Jekyll](https://jekyllcn.com/docs/home/) 搭建，使用GitHub Pages托管，采用 [Millennial](https://github.com/LeNPaul/Millennial) 主题。
+
+建立这个网站的目的：
+
+- 满足自我的情感需求，个人在社会中是不起眼的一个，就如此站在互联网的位置，但我的感情需要有分享的位置。
+
+- hello world
+
+  
+
+- ​                 《定风波·莫听穿林打叶声》[宋] 苏轼
+
+- 莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。
+
+  料峭春风吹酒醒，微冷，山头斜照却相迎。回首向来萧瑟处，归去，也无风雨也无晴。
+
+  ​                                                                                 
+
+- ​                  《清平乐·六盘山》近现代·毛泽东
+
+  天高云淡，望断南飞雁。不到长城非好汉，屈指行程二万。
+
+  六盘山上高峰，红旗漫卷西风。今日长缨在手，何时缚住苍龙？
+
+  ​                                           
+
+## 关于作者
+
+02年的一个男的，24年毕业之前，过着迷茫简单快乐的生活，毕业后开始打工生涯，不再快乐。
+
+我对自己的看法还是挺准的，就是一个普通人，找一个普通的工作，享受普通的生活，可是在现在的工作环境中，竟不知道自己如何做。
+
+​										虞美人·听雨 [宋] 蒋捷
+
+​				少年听雨歌楼上，红烛昏罗帐。壮年听雨客舟中，江阔云低、断雁叫西风。
+​				而今听雨僧庐下，鬓已星星也。悲欢离合总无情，一任阶前、点滴到天明。
+
+我对世界还是抱有好奇心的，不然不会建这个网站。
+
