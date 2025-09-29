@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Documentation
-category: documentation
-permalink: /documentation
+title: 分享
+category: sharing
+permalink: /sharing
 ---

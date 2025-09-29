@@ -1,6 +1,6 @@
 ---
 layout: category
-title: Sample Posts
-category: sample
-permalink: /sample-posts
+title: 项目
+category: projects
+permalink: /projects
 ---
