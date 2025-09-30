@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started"
 author: "Paul Le"
-categories: sharing
+categories: sharing #类别
 tags: [sharing,notes]
 image: city-1.jpg
 ---
