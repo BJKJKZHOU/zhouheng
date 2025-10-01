@@ -11,13 +11,7 @@ layout: default
   {% endif %}
   {% if page.image %}
     <div class="featured-image">
-      {% assign post_path_parts = page.path | split: '/' %}
-      {% assign post_folder = post_path_parts | slice: 1, post_path_parts.size | join: '/' | replace: '.md','' %}
-      <img 
-        src="/assets/img/{{ post_folder }}/{{ page.image }}" 
-        alt="{{ page.title }}"
-        onerror="this.src='/assets/img/{{ post_folder }}/{{ page.image }}'; this.onerror=null;"
-      >
+      <img src="{{ site.github.url }}/assets/img/{{ page.image }}">
     </div>
   {% endif %}
   <article>
