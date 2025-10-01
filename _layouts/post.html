@@ -16,13 +16,13 @@ layout: default
         <img src="{{ page.image }}" alt="{{ page.title }}">
       {% else %}
         <!-- 智能检测图片路径 -->
-        {% assign post_dir = page.path | split: '/' %}
-        {% assign post_folder = post_dir | last | replace: '.md','' %}
+        {% assign image_url = page.url | append: page.image %}
+        {% assign assets_url = site.github.url | append: '/assets/img/' | append: page.image %}
         
-        <!-- 优先尝试文章所在文件夹的相对路径 -->
+        <!-- 使用更简单的回退机制 -->
         <img 
-          src="{{ page.url }}{{ page.image }}" 
-          onerror="this.src='{{ site.github.url }}/assets/img/{{ page.image }}'; this.onerror=null;"
+          src="{{ image_url }}" 
+          onerror="this.src='{{ assets_url }}'; this.onerror=null;"
           alt="{{ page.title }}"
         >
       {% endif %}
