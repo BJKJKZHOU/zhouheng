@@ -11,11 +11,12 @@ layout: default
   {% endif %}
   {% if page.image %}
     <div class="featured-image">
-      {% assign post_folder = page.path | split: '/' | last | replace: '.md','' %}
+      {% assign post_path_parts = page.path | split: '/' %}
+      {% assign post_folder = post_path_parts | slice: 1, post_path_parts.size | join: '/' | replace: '.md','' %}
       <img 
         src="/assets/img/{{ post_folder }}/{{ page.image }}" 
         alt="{{ page.title }}"
-        onerror="this.src='{{ page.image }}'; this.onerror=null;"
+        onerror="this.src='/assets/img/{{ post_folder }}/{{ page.image }}'; this.onerror=null;"
       >
     </div>
   {% endif %}
