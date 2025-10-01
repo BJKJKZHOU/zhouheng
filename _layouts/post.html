@@ -11,18 +11,13 @@ layout: default
   {% endif %}
   {% if page.image %}
     <div class="featured-image">
-      {% if page.image contains '/' or page.image contains 'http' %}
-        <!-- 如果是完整路径或网络图片，直接使用 -->
+      {% if page.image contains 'http' or page.image contains '/' %}
+        <!-- 如果是完整URL或绝对路径 -->
         <img src="{{ page.image }}" alt="{{ page.title }}">
       {% else %}
-        <!-- 智能检测图片路径 -->
-        {% assign image_url = page.url | append: page.image %}
-        {% assign assets_url = site.github.url | append: '/assets/img/' | append: page.image %}
-        
-        <!-- 使用更简单的回退机制 -->
+        <!-- 对于相对路径，优先使用文章文件夹中的图片 -->
         <img 
-          src="{{ image_url }}" 
-          onerror="this.src='{{ assets_url }}'; this.onerror=null;"
+          src="{{ page.url }}{{ page.image }}" 
           alt="{{ page.title }}"
         >
       {% endif %}
