@@ -11,7 +11,21 @@ layout: default
   {% endif %}
   {% if page.image %}
     <div class="featured-image">
-      <img src="{{ page.path | replace: '.md','' }}/{{ page.image }}">
+      {% if page.image contains '/' or page.image contains 'http' %}
+        <!-- 如果是完整路径或网络图片，直接使用 -->
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+      {% else %}
+        <!-- 智能检测图片路径 -->
+        {% assign post_dir = page.path | split: '/' %}
+        {% assign post_folder = post_dir | last | replace: '.md','' %}
+        
+        <!-- 优先尝试文章所在文件夹的相对路径 -->
+        <img 
+          src="{{ page.url }}{{ page.image }}" 
+          onerror="this.src='{{ site.github.url }}/assets/img/{{ page.image }}'; this.onerror=null;"
+          alt="{{ page.title }}"
+        >
+      {% endif %}
     </div>
   {% endif %}
   <article>
