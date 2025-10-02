@@ -10,15 +10,19 @@
   margin-bottom: 1rem;
   color: #9a9a9a;
   font-size: 0.8rem;
+  width: 100%;
 }
 
 .post-date-info {
-  display: inline;
+  display: inline-block;
+  flex: 1;
 }
 
 .post-copyright {
-  display: inline;
+  display: inline-block;
   text-align: right;
+  white-space: nowrap;
+  margin-left: 10px;
 }
 
 /* 保留原有的post-date样式，确保兼容性 */
@@ -38,6 +42,7 @@
   
   .post-copyright {
     margin-top: 0.25rem;
+    margin-left: 0;
   }
 }
 .featured-image img {

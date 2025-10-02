@@ -11,11 +11,8 @@
       {% when '3' or '23' %}{{ d }}rd
       {% else %}{{ d }}th{% endcase %}, {{ page.date | date: "%Y" }}
     by
-    {% if page.author %}
-      {{ page.author }}
-    {% else %}
-      {{ site.author }}
-    {% endif %}
+    {% capture post_author %}{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}{% endcapture %}
+    {{ post_author }}
   </span>
   <span class="post-copyright">© {{ site.author }}</span>
 </div>
