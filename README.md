@@ -20,4 +20,4 @@
 **MIT 许可证摘要：**
 本授权条款允许您出于个人或商业目的使用、复制、修改、合并、发布、分发和/或销售本软件的副本。唯一的限制是，您在软件的所有副本中必须包含上述版权声明和本许可声明。
 
-详情请参阅项目根目录下的 [LICENSE](LICENSE) 文件。
+详情请参阅项目根目录下的 [LICENSE](https://github.com/BJKJKZHOU/zhouheng/blob/my-pages/LICENSE.md) 文件。
