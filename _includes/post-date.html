@@ -14,5 +14,8 @@
     {% capture post_author %}{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}{% endcapture %}
     {{ post_author }}
   </span>
-  <span class="post-copyright">© {{ site.author }}</span>
+  <span class="post-copyright">
+    {% capture copyright_author %}{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}{% endcapture %}
+    © {{ copyright_author }}
+  </span>
 </div>
