@@ -12,7 +12,7 @@
 
 ## 许可证
 
-本项目是开源软件，遵循 [MIT 许可证](LICENSE)。
+本项目是开源软件，遵循 [MIT 许可证](https://github.com/BJKJKZHOU/zhouheng/blob/gh-pages/LICENSE.md)。
 
 *   本项目的初始代码和设计源于 [LeNPaul/Millennial](https://github.com/LeNPaul/Millennial) 主题，该主题同样基于 MIT 许可证发布。
 *   由[BJKJKZHOU](https://github.com/BJKJKZHOU)所做的修改和定制，同样遵循 MIT 许可证。
