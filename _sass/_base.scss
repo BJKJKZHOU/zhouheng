@@ -75,7 +75,7 @@ body::before {
 }
 
 .content-wrapper {
-  padding-top: $header-thickness+10px;
+  padding-top: $header-thickness + 20px;  // 增加到76px确保充分间隔
   margin: auto;
   display: block;
   width: $container-width - 20px;
