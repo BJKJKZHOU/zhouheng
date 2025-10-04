@@ -24,6 +24,17 @@
   // 确保导航栏宽度与内容区域一致
   max-width: $container-width;
   box-sizing: border-box;
+  
+  // 添加隐形线作为内容消失的起点
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid transparent;
+  }
 }
 
 @media (max-width: $container-width) {

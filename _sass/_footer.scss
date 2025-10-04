@@ -7,7 +7,7 @@
   text-align: center;
   min-height: 56px;
   line-height: 45px;
-  width: $container-width;
+  width: $container-width; // 与导航栏等宽
   border-radius: 8px;
   margin: 0 auto 20px;
   padding: 0 20px;
@@ -30,7 +30,7 @@
     text-align: center;
     min-height: 56px;
     line-height: 45px;
-    width: 95vw;
+    width: 95vw; // 移动端与导航栏等宽
     border-radius: 0;
     margin: 0 auto 15px;
     padding: 0 20px;
