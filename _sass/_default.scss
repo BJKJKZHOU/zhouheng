@@ -6,25 +6,39 @@
   width: $container-width;
   margin-left: auto;
   margin-right: auto;
+  // 添加flex布局确保子元素居中对齐
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container a {
   text-decoration: underline;
 }
+
 .content-wrapper {
-  padding-top: 86px;  // 直接设置固定值，确保有足够空间避免与头部重叠
+  padding-top: 86px;
   margin: auto;
   display: block;
-  width: $container-width;
+  width: calc($container-width - 40px); // 内容区域比容器小40px，确保不超过导航栏
   // 毛玻璃效果 - 透明度改为65%
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  min-height: calc(100vh - 176px);  // 调整最小高度，减去头部和底部高度
-  z-index: 1;  // 确保内容区域在导航栏下方
-  position: relative;  // 添加相对定位以支持z-index
+  padding: 30px;
+  min-height: calc(100vh - 176px);
+  z-index: 1;
+  position: relative;
+  margin-bottom: 20px;
+  // 添加hover交互效果
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+// 鼠标悬停时的浮动效果
+.content-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: $container-width) {
@@ -34,21 +48,29 @@
     margin-right: auto;
   }
   .content-wrapper {
-    padding-top: 76px;  // 移动端调整上边距
+    padding-top: 76px;
     margin: auto;
     display: block;
-    width: 95vw;
+    width: calc(95vw - 40px); // 移动端同样缩小宽度
     // 移动端毛玻璃效果调整 - 透明度改为65%
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 0;
-    padding: 15px;
-    min-height: calc(100vh - 161px);  // 移动端调整最小高度
-    z-index: 1;  // 移动端同样确保内容区域在导航栏下方
-    position: relative;  // 移动端添加相对定位以支持z-index
+    padding: 20px;
+    min-height: calc(100vh - 161px);
+    z-index: 1;
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  // 移动端禁用hover效果
+  .content-wrapper:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 }
+
 .content-wrapper h1 {
-  margin: 20px 0px 5px;
+  margin: 0 0 20px 0; // 优化标题间距
 }
