@@ -12,9 +12,10 @@
 }
 .content-wrapper {
   padding-top: 86px;  // 直接设置固定值，确保有足够空间避免与头部重叠
-  margin: auto;
+  margin: 30px auto 0;  // 增加顶部外边距到30px，解决与导航栏的重叠问题
   display: block;
-  width: $container-width;
+  width: $container-width;  // 与导航栏和底部区域保持相同宽度
+  box-sizing: border-box;  // 确保padding不会增加实际宽度
   // 毛玻璃效果 - 透明度改为65%
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
@@ -22,29 +23,27 @@
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  min-height: calc(100vh - 146px);  // 调整最小高度，减去头部和底部高度
-  margin-top: 20px;  // 增加顶部外边距
+  min-height: calc(100vh - 156px);  // 调整最小高度，减去头部和底部高度
+  z-index: 90;  // 确保内容区域在导航栏下方
+  position: relative;  // 添加相对定位以支持z-index
 }
 
 @media (max-width: $container-width) {
-  .container {
-    width: 95vw;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .content-wrapper {
     padding-top: 76px;  // 移动端调整上边距
-    margin: auto;
+    margin: 25px auto 0;  // 移动端增加顶部外边距
     display: block;
-    width: 95vw;
+    width: 95vw;  // 移动端与导航栏和底部区域保持相同宽度
+    box-sizing: border-box;  // 移动端同样确保padding不会增加实际宽度
     // 移动端毛玻璃效果调整 - 透明度改为65%
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 0;
     padding: 15px;
-    margin-top: 15px;  // 移动端增加顶部外边距
-    min-height: calc(100vh - 136px);  // 移动端调整最小高度
+    min-height: calc(100vh - 146px);  // 移动端调整最小高度
+    z-index: 90;  // 移动端同样确保内容区域在导航栏下方
+    position: relative;  // 移动端添加相对定位以支持z-index
   }
 }
 .content-wrapper h1 {
