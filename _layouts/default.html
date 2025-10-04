@@ -4,10 +4,39 @@
   <body>
     <div class="container">
       {% include header.html %}
+      <!-- 在导航栏下方添加隐形参考线 -->
+      <div class="reference-line"></div>
       <div class="content-wrapper">
         {{ content }}
       </div>
       {% include footer.html %}
     </div>
+    
+    <!-- 添加滚动检测脚本 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const contentWrapper = document.querySelector('.content-wrapper');
+        const referenceLine = document.querySelector('.reference-line');
+        const referenceLinePosition = 56; // 导航栏高度
+        
+        function checkScrollPosition() {
+          // 获取内容区域相对于视窗的位置
+          const rect = contentWrapper.getBoundingClientRect();
+          
+          // 当内容区域的顶部越过参考线时，添加scrolled-past类
+          if (rect.top < referenceLinePosition) {
+            contentWrapper.classList.add('scrolled-past');
+          } else {
+            contentWrapper.classList.remove('scrolled-past');
+          }
+        }
+        
+        // 监听滚动事件
+        window.addEventListener('scroll', checkScrollPosition);
+        
+        // 初始检查
+        checkScrollPosition();
+      });
+    </script>
   </body>
 </html>

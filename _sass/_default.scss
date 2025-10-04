@@ -13,6 +13,20 @@
   // 确保容器宽度与导航栏一致
   max-width: $container-width;
   box-sizing: border-box;
+  // 添加参考线容器
+  position: relative;
+}
+
+// 在导航栏下方添加一条隐形的参考线
+.reference-line {
+  position: fixed;
+  top: 56px; // 导航栏高度
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: transparent;
+  z-index: 99;
+  pointer-events: none;
 }
 
 .content-wrapper {
@@ -38,6 +52,12 @@
   box-sizing: border-box;
   // 添加滚动消失效果
   transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  // 当内容滚动超过参考线时逐渐消失的效果
+  &.scrolled-past {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
 }
 
 // 当内容区域滚动到导航栏底部时逐渐消失
@@ -52,6 +72,12 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 95vw;
+  }
+  
+  .reference-line {
+    top: 56px; // 导航栏高度在移动端保持一致
+    left: 0;
+    right: 0;
   }
   
   .content-wrapper {
