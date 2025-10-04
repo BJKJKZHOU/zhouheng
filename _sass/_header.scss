@@ -2,73 +2,23 @@
   min-height: 56px;
   width: $container-width;
   position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  // 毛玻璃效果 - 透明度改为65%
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
-  // 添加下边框作为隐形的线 - 改为半透明边框
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  // 添加下圆角
-  border-radius: 0 0 8px 8px;
-  // 确保导航栏有明确的边界
-  padding: 0 20px;
-  // 添加flex布局确保内容居中
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // 确保导航栏宽度与内容区域一致
-  max-width: $container-width;
-  box-sizing: border-box;
-  
-  // 添加隐形线作为内容消失的起点
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    border-bottom: 1px solid transparent;
-  }
 }
-
 @media (max-width: $container-width) {
   .site-header {
     min-height: 56px;
     width: 95vw;
     position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    // 毛玻璃效果 - 透明度改为65%
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    box-shadow: 0 5px 6px -6px #bbb;
     z-index: 100;
-    // 移动端同样添加下边框和下圆角
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 8px 8px;
-    padding: 0 20px;
-    // 移动端垂直布局
-    flex-direction: column;
-    padding: 10px 20px;
-    min-height: auto;
-    // 移动端宽度设置
-    max-width: 95vw;
-    box-sizing: border-box;
   }
 }
-
 .site-header a {
   text-decoration: none;
 }
-
 .site-title {
   font-size: 26px;
   font-weight: 400;
@@ -76,27 +26,16 @@
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 10px;
-  float: none; // 移除浮动，使用flex布局
+  float: left;
 }
-
 .menu-list {
   line-height: $header-thickness;
-  float: none; // 移除浮动，使用flex布局
-  display: flex;
-  gap: 15px;
+  float: right;
 }
-
 .menu-link {
-  padding: 5px 8px; // 原为5px 10px，左右间距减少20%
-  font-size: 15px;  
-  gap: 12px; // 新增flex项间距
+  padding: 5px 10px;
 }
 
-@media (max-width: $container-width) {
-  .dropbtn {
-    padding: 10px; // 原为16px
-  }
-}
 /*
   Responsiveness with a dropdown menu
 */
@@ -109,15 +48,12 @@
     display: none;
   }
 }
-
 @media (max-width: $container-width) {
   .menu-list {
     display: none;
   }
   .site-title {
     padding-right: 0.25rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
   }
   .dropbtn {
     background-color: white;
