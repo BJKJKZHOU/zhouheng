@@ -87,9 +87,16 @@
 }
 
 .menu-link {
-  padding: 5px 10px;
+  padding: 5px 8px; // 原为5px 10px，左右间距减少20%
+  font-size: 15px;  
+  gap: 12px; // 新增flex项间距
 }
 
+@media (max-width: $container-width) {
+  .dropbtn {
+    padding: 10px; // 原为16px
+  }
+}
 /*
   Responsiveness with a dropdown menu
 */
