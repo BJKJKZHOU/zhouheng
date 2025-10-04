@@ -137,29 +137,102 @@
 }
 
 /*
-  Pagination
+  Pagination - 智能页码导航
 */
 
 .pagination {
   text-align: center;
   margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.pagination a {
+
+.pagination-button {
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  text-align: center;
+}
+
+.pagination-button:hover {
+  background-color: #f5f5f5;
+  border-color: #999;
+  color: #333;
   text-decoration: none;
 }
-.pagination-button {
-  color: #999;
-  border: 1px solid #e0e0e0;
-  padding: 15px 45px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.pagination-current {
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  margin: 4px;
   display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  min-width: 44px;
+  text-align: center;
 }
-.pagination-active {
-  color: black;
+
+.pagination-ellipsis {
+  color: #999;
+  padding: 8px 8px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
 }
-.pagination-active:hover {
-  background-color: #e0e0e0;
+
+/* 响应式设计 */
+@media (max-width: $tablet-width) {
+  .pagination {
+    gap: 4px;
+  }
+  
+  .pagination-button,
+  .pagination-current {
+    padding: 6px 12px;
+    font-size: 13px;
+    min-width: 36px;
+    margin: 2px;
+  }
+  
+  .pagination-ellipsis {
+    padding: 6px 6px;
+    font-size: 13px;
+    margin: 2px;
+  }
+}
+
+@media (max-width: $phone-width) {
+  .pagination {
+    gap: 2px;
+  }
+  
+  .pagination-button,
+  .pagination-current {
+    padding: 4px 8px;
+    font-size: 12px;
+    min-width: 32px;
+    margin: 1px;
+  }
+  
+  .pagination-ellipsis {
+    padding: 4px 4px;
+    font-size: 12px;
+    margin: 1px;
+  }
 }
