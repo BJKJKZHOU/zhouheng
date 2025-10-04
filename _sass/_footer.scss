@@ -5,19 +5,39 @@
   -webkit-backdrop-filter: blur(10px);
   color: $brand-color;
   text-align: center;
-  min-height: 56px;
-  line-height: 45px;
+  min-height: 80px; // 增加最小高度以适应两行布局
   width: $container-width; // 与导航栏等宽
   border-radius: 8px;
   margin: 0 auto 20px;
-  padding: 0 20px;
-  // 添加flex布局确保内容居中
+  padding: 15px 20px; // 调整内边距
+  // 修改flex布局为垂直方向
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   // 确保底部宽度与导航栏一致
   max-width: $container-width;
   box-sizing: border-box;
+}
+
+// 联系方式区域样式
+.footer-contact {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+// 社交链接区域样式
+.footer-social {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.footer-description {
+  font-size: 0.9rem;
 }
 
 @media (max-width: $container-width) {
@@ -28,7 +48,7 @@
     -webkit-backdrop-filter: blur(10px);
     color: $brand-color;
     text-align: center;
-    min-height: 56px;
+    min-height: 80px; // 移动端同样增加最小高度
     line-height: 45px;
     width: 95vw; // 移动端与导航栏等宽
     border-radius: 0;
@@ -37,6 +57,11 @@
     // 移动端宽度设置
     max-width: 95vw;
     box-sizing: border-box;
+  }
+  
+  .footer-contact {
+    flex-direction: column;
+    gap: 5px;
   }
 }
 

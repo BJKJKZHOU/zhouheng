@@ -1,6 +1,16 @@
 <footer class="footer">
-  {% for item in site.data.settings.social %}
-    <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
-  {% endfor %}
+  <div class="footer-contact">
+    {% if site.data.settings.contact.email %}
+      <a href="mailto:{{ site.data.settings.contact.email }}" class="menu-link"><i class="fa fa-envelope" aria-hidden="true"></i> {{ site.data.settings.contact.email }}</a>
+    {% endif %}
+    {% if site.data.settings.contact.phone %}
+      <span class="menu-link"><i class="fa fa-phone" aria-hidden="true"></i> {{ site.data.settings.contact.phone }}</span>
+    {% endif %}
+  </div>
+  <div class="footer-social">
+    {% for item in site.data.settings.social %}
+      <a href="{{ item.link }}" class="menu-link" target="_blank"><i class="fa fa-{{ item.icon }}" aria-hidden="true"></i></a>
+    {% endfor %}
+  </div>
   <div class="footer-description"><a href="{{ site.github.url }}/">{{ site.title }} | {{ site.description }} by {{ site.author }}</a></div>
 </footer>
