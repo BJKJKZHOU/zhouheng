@@ -12,10 +12,9 @@
 }
 .content-wrapper {
   padding-top: 86px;  // 直接设置固定值，确保有足够空间避免与头部重叠
-  margin: 30px auto 0;  // 增加顶部外边距到30px，解决与导航栏的重叠问题
+  margin: auto;
   display: block;
-  width: $container-width;  // 与导航栏和底部区域保持相同宽度
-  box-sizing: border-box;  // 确保padding不会增加实际宽度
+  width: $container-width;
   // 毛玻璃效果 - 透明度改为65%
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
@@ -29,12 +28,16 @@
 }
 
 @media (max-width: $container-width) {
+  .container {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .content-wrapper {
     padding-top: 76px;  // 移动端调整上边距
-    margin: 25px auto 0;  // 移动端增加顶部外边距
+    margin: auto;
     display: block;
-    width: 95vw;  // 移动端与导航栏和底部区域保持相同宽度
-    box-sizing: border-box;  // 移动端同样确保padding不会增加实际宽度
+    width: 95vw;
     // 移动端毛玻璃效果调整 - 透明度改为65%
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(5px);
