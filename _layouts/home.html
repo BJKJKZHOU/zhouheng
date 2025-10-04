@@ -10,13 +10,3 @@ title: Home
   {% endfor %}
 </div>
 
-{% if paginator.total_pages > 1 %}
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-    {% endif %}
-  </div>
-{% endif %}
