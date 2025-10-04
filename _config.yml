@@ -7,6 +7,7 @@ paginate:            6
 markdown:            kramdown
 highlighter:         rouge
 permalink:           /:title
+paginate_path:       "/page:num"
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
