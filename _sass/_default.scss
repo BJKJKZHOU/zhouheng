@@ -3,7 +3,8 @@
 */
 
 .container {
-  width: $container-width;
+  --container-width: #{$container-width};
+  width: var(--container-width);
   margin-left: auto;
   margin-right: auto;
   // 添加flex布局确保子元素居中对齐
@@ -11,31 +12,18 @@
   flex-direction: column;
   align-items: center;
   // 确保容器宽度与导航栏一致
-  max-width: $container-width;
+  max-width: var(--container-width);
   box-sizing: border-box;
   // 添加参考线容器
   position: relative;
 }
 
-// 在导航栏下方添加一条隐形的参考线
-.reference-line {
-  position: fixed;
-  top: 56px; // 导航栏高度
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: transparent;
-  z-index: 99;
-  pointer-events: none;
-}
-
 .content-wrapper {
-  // 将padding-top从86px增加到76px，确保内容不被导航栏遮挡
-  // 导航栏高度为56px，增加20px间距以确保充分间隔
-  padding-top: 76px;
+  // 关键：从导航栏底部开始，设置足够的上边距
+  margin-top: 86px;
   margin: auto;
   display: block;
-  width: $container-width; // 与导航栏等宽
+  width: var(--container-width); // 与导航栏等宽
   // 毛玻璃效果 - 透明度改为65%
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
@@ -44,11 +32,11 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
   min-height: calc(100vh - 176px);
-  z-index: 1;
   position: relative;
+  z-index: 1; /* 确保内容在导航栏下方 */
   margin-bottom: 20px;
   // 确保内容区域宽度不超过导航栏
-  max-width: $container-width;
+  max-width: var(--container-width);
   box-sizing: border-box;
   // 添加滚动消失效果
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -60,32 +48,20 @@
   }
 }
 
-// 当内容区域滚动到导航栏底部时逐渐消失
-.content-wrapper.scrolling-up {
-  opacity: 0.7;
-  transform: translateY(-10px);
-}
-
 @media (max-width: $container-width) {
   .container {
-    width: 95vw;
+    --container-width: 95vw;
+    width: var(--container-width);
     margin-left: auto;
     margin-right: auto;
-    max-width: 95vw;
-  }
-  
-  .reference-line {
-    top: 56px; // 导航栏高度在移动端保持一致
-    left: 0;
-    right: 0;
+    max-width: var(--container-width);
   }
   
   .content-wrapper {
-    // 移动端将padding-top从76px调整为76px，确保内容不被导航栏遮挡
-    padding-top: 76px;
+    margin-top: 76px; /* 移动端调整间距 */
     margin: auto;
     display: block;
-    width: 95vw; // 移动端与导航栏等宽
+    width: var(--container-width); // 移动端与导航栏等宽
     // 移动端毛玻璃效果调整 - 透明度改为65%
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(5px);
@@ -93,10 +69,10 @@
     border-radius: 0;
     padding: 20px;
     min-height: calc(100vh - 161px);
-    z-index: 1;
     position: relative;
+    z-index: 1; /* 确保内容在导航栏下方 */
     margin-bottom: 15px;
-    max-width: 95vw;
+    max-width: var(--container-width);
   }
   
   // 移动端禁用hover效果

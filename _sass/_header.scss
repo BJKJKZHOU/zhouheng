@@ -1,16 +1,25 @@
 .site-header {
+  --container-width: #{$container-width};
   min-height: 56px;
-  width: $container-width;
+  width: var(--container-width);
   position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: white;
   box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
 }
+
 @media (max-width: $container-width) {
   .site-header {
+    --container-width: 95vw;
     min-height: 56px;
-    width: 95vw;
+    width: var(--container-width);
     position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: white;
     box-shadow: 0 5px 6px -6px #bbb;
     z-index: 100;
