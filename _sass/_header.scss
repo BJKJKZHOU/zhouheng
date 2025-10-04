@@ -1,18 +1,11 @@
 .site-header {
   min-height: 56px;
-<<<<<<< HEAD
-  height: 56px; /* 明确设置高度 */
-  width: var(--container-width);
-=======
   width: $container-width;
->>>>>>> parent of 61c9665 (重叠问题3)
   position: fixed;
   background-color: white;
   box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
 }
-<<<<<<< HEAD
-=======
 @media (max-width: $container-width) {
   .site-header {
     min-height: 56px;
@@ -99,4 +92,3 @@
     background-color: #f1f1f1;
   }
 }
->>>>>>> parent of 61c9665 (重叠问题3)
