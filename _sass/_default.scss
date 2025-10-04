@@ -16,7 +16,9 @@
 }
 
 .content-wrapper {
-  padding-top: 96px; // 从原来的86px增加到96px，确保内容不被导航栏遮挡
+  // 将padding-top从86px增加到66px，确保内容不被导航栏遮挡
+  // 导航栏高度为56px，增加10px间距
+  padding-top: 66px;
   margin: auto;
   display: block;
   width: $container-width; // 与导航栏等宽
@@ -53,7 +55,8 @@
   }
   
   .content-wrapper {
-    padding-top: 76px;
+    // 移动端将padding-top从76px调整为66px
+    padding-top: 66px;
     margin: auto;
     display: block;
     width: 95vw; // 移动端与导航栏等宽
