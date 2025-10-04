@@ -15,6 +15,8 @@
   border-bottom: 1px solid transparent;
   // 添加下圆角
   border-radius: 0 0 8px 8px;
+  // 确保导航栏有明确的边界
+  padding: 0 20px;
 }
 
 @media (max-width: $container-width) {
@@ -34,6 +36,7 @@
     // 移动端同样添加下边框和下圆角
     border-bottom: 1px solid transparent;
     border-radius: 0 0 8px 8px;
+    padding: 0 20px;
   }
 }
 .site-header a {

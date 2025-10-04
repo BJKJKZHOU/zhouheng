@@ -10,6 +10,7 @@
   width: $container-width;
   border-radius: 8px;  // 改为四个角都有圆角
   margin: 20px auto 0;  // 使用margin: auto实现居中
+  padding: 0 20px;
 }
 
 @media (max-width: $container-width) {
@@ -25,6 +26,7 @@
     width: 95vw;
     border-radius: 8px;  // 移动端同样改为四个角都有圆角
     margin: 20px auto 0;  // 移动端同样使用margin: auto
+    padding: 0 20px;
   }
 }
 .footer a {
