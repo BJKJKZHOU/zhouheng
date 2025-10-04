@@ -1,18 +1,19 @@
 # Site Build Settings
 
 # jekyll-paginate configuration
-paginate:            5
+paginate:            6
 
 # Build settings
 markdown:            kramdown
 highlighter:         rouge
 permalink:           /:title
+paginate_path:       "/page:num"
 plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           "Millennial"
-description:	       "a minimalist Jekyll theme for running a blog or publication"
-author:              "Paul Le"
+title:		           "ZHOUHENG"
+description:	       "吾生也有涯，而知也无涯 。以有涯随无涯，殆已！"
+author:              "庄子"
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

@@ -40,6 +40,51 @@ h4, h5, h6 {
 /* Body */
 body {
   font-family: $base-font-family;
+  // 背景图片设置 - 从assets/img/backgrounds文件夹读取
+  background-image: url('../img/backgrounds/backgrounds_picture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+// 毛玻璃效果容器
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+// 内容区域的毛玻璃效果
+.container {
+  width: $container-width;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.content-wrapper {
+  padding-top: $header-thickness+10px;
+  margin: auto;
+  display: block;
+  width: $container-width - 20px;
+  // 毛玻璃效果
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: calc(100vh - #{$header-thickness} - 60px);
 }
 body img {
   align: middle;

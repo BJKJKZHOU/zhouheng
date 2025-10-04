@@ -1,56 +1,238 @@
-.featured-post {
-  height: 400px;
-  margin: 5px 10px 10px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.featured-post h2 {
-  bottom: 0;
-  margin: 0;
-  padding: 10px;
-  position: absolute;
-}
-.featured-post h2 span {
-  display: inline-block;
-  color: white;
-  font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-}
-.featured-post span a {
-  color: white;
-}
-.featured-post h1 {
-  margin: 10px;
-}
+// .featured-post {
+//   height: 400px;
+//   margin: 5px 10px 10px;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   position: relative;
+// }
+// .featured-post h2 {
+//   bottom: 0;
+//   margin: 0;
+//   padding: 10px;
+//   position: absolute;
+// }
+// .featured-post h2 span {
+//   display: inline-block;
+//   color: white;
+//   font: bold 24px/45px Helvetica, Sans-Serif;
+//   letter-spacing: -1px;
+//   background: rgb(0, 0, 0); /* fallback color */
+//   background: rgba(0, 0, 0, 0.7);
+//   padding: 10px;
+// }
+// .featured-post span a {
+//   color: white;
+// }
+// .featured-post h1 {
+//   margin: 10px;
+// }
 
 /*
   Pagination
 */
 
+// .pagination {
+//   text-align: center;
+// }
+// .pagination a {
+//   text-decoration: none;
+// }
+// .pagination-button {
+//   color: #999;
+//   border: 1px solid #e0e0e0;
+//   padding: 15px 45px;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+//   display: inline-block;
+//   font-size: 16px;
+//   font-weight: bold;
+// }
+// .pagination-active {
+//   color: black;
+// }
+// .pagination-active:hover {
+//   background-color: #e0e0e0;
+// }
+
+
+/* 网格布局容器 - 仅主页应用 */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 文章卡片样式 - 16:10比例 */
+.featured-post {
+  /* 计算高度以实现16:10比例 */
+  height: 0;
+  padding-bottom: 62.5%; /* 10/16 = 0.625 = 62.5% */
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 标题样式 - 底部叠加效果 */
+.featured-post h2 {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 15px;
+  position: absolute;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+}
+
+.featured-post h2 span {
+  display: inline-block;
+  color: white;
+  font: bold 18px/24px $base-font-family;
+  padding: 0;
+  background: none;
+}
+
+.featured-post span a {
+  color: white;
+}
+
+/* 链接交互样式 */
+.post-link {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.post-link:hover {
+  transform: translateY(-5px);
+}
+
+.post-link:hover .featured-post {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* 响应式设计 - 移动端显示一张图片 */
+@media (max-width: $tablet-width) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .featured-post {
+    border-radius: 6px;
+  }
+  
+  .featured-post h2 span {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+/*
+  Pagination - 智能页码导航
+*/
+
 .pagination {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-.pagination a {
+
+.pagination-button {
+  color: #666;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  text-align: center;
+}
+
+.pagination-button:hover {
+  background-color: #f5f5f5;
+  border-color: #999;
+  color: #333;
   text-decoration: none;
 }
-.pagination-button {
-  color: #999;
-  border: 1px solid #e0e0e0;
-  padding: 15px 45px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.pagination-current {
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  margin: 4px;
   display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  min-width: 44px;
+  text-align: center;
 }
-.pagination-active {
-  color: black;
+
+.pagination-ellipsis {
+  color: #999;
+  padding: 8px 8px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
 }
-.pagination-active:hover {
-  background-color: #e0e0e0;
+
+/* 响应式设计 */
+@media (max-width: $tablet-width) {
+  .pagination {
+    gap: 4px;
+  }
+  
+  .pagination-button,
+  .pagination-current {
+    padding: 6px 12px;
+    font-size: 13px;
+    min-width: 36px;
+    margin: 2px;
+  }
+  
+  .pagination-ellipsis {
+    padding: 6px 6px;
+    font-size: 13px;
+    margin: 2px;
+  }
+}
+
+@media (max-width: $phone-width) {
+  .pagination {
+    gap: 2px;
+  }
+  
+  .pagination-button,
+  .pagination-current {
+    padding: 4px 8px;
+    font-size: 12px;
+    min-width: 32px;
+    margin: 1px;
+  }
+  
+  .pagination-ellipsis {
+    padding: 4px 4px;
+    font-size: 12px;
+    margin: 1px;
+  }
 }

@@ -15,10 +15,16 @@
   margin: auto;
   display: block;
   width: $container-width - 20px;
+  // 毛玻璃效果
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: calc(100vh - #{$header-thickness} - 60px);
 }
-.content-wrapper h1 {
-  margin: 20px 0px 5px;
-}
+
 @media (max-width: $container-width) {
   .container {
     width: 95vw;
@@ -30,5 +36,14 @@
     margin: auto;
     display: block;
     width: 95vw;
+    // 移动端毛玻璃效果调整
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 0;
+    padding: 15px;
   }
+}
+.content-wrapper h1 {
+  margin: 20px 0px 5px;
 }

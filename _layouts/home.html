@@ -3,20 +3,68 @@ layout: default
 title: Home
 ---
 
-{% for post in paginator.posts %}
-  {% include featured-post.html %}
-{% endfor %}
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-button pagination-active next" href="{{ site.github.url }}{{ paginator.next_page_path }}">{{ site.data.settings.pagination.previous_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.previous_page }}</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-button pagination-active" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">{{ site.data.settings.pagination.next_page }}</a>
-  {% else %}
-    <span class="pagination-button">{{ site.data.settings.pagination.next_page }}</span>
-  {% endif %}
+<div class="posts-grid">
+  {% for post in paginator.posts %}
+    {% include featured-post.html %}
+  {% endfor %}
 </div>
+
+{% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    <!-- 上一页按钮 -->
+    {% if paginator.previous_page %}
+      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pagination-button">上一页</a>
+    {% endif %}
+    
+    <!-- 智能页码显示（最多显示7个页码） -->
+    {% assign start_page = paginator.page | minus: 3 %}
+    {% assign end_page = paginator.page | plus: 3 %}
+    {% if start_page < 1 %}
+      {% assign start_page = 1 %}
+      {% assign end_page = start_page | plus: 6 %}
+      {% if end_page > paginator.total_pages %}
+        {% assign end_page = paginator.total_pages %}
+      {% endif %}
+    {% endif %}
+    {% if end_page > paginator.total_pages %}
+      {% assign end_page = paginator.total_pages %}
+      {% assign start_page = end_page | minus: 6 %}
+      {% if start_page < 1 %}
+        {% assign start_page = 1 %}
+      {% endif %}
+    {% endif %}
+    
+    <!-- 第一页和省略号 -->
+    {% if start_page > 1 %}
+      <a href="{{ site.baseurl }}/" class="pagination-button">1</a>
+      {% if start_page > 2 %}
+        <span class="pagination-ellipsis">...</span>
+      {% endif %}
+    {% endif %}
+    
+    <!-- 页码循环 -->
+    {% for page in (start_page..end_page) %}
+      {% if page == paginator.page %}
+        <span class="pagination-current">{{ page }}</span>
+      {% elsif page == 1 %}
+        <a href="{{ site.baseurl }}/" class="pagination-button">{{ page }}</a>
+      {% else %}
+        <a href="{{ site.baseurl }}/page{{ page }}/" class="pagination-button">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+    
+    <!-- 最后一页和省略号 -->
+    {% if end_page < paginator.total_pages %}
+      {% if end_page < paginator.total_pages | minus: 1 %}
+        <span class="pagination-ellipsis">...</span>
+      {% endif %}
+      <a href="{{ site.baseurl }}/page{{ paginator.total_pages }}/" class="pagination-button">{{ paginator.total_pages }}</a>
+    {% endif %}
+    
+    <!-- 下一页按钮 -->
+    {% if paginator.next_page %}
+      <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="pagination-button">下一页</a>
+    {% endif %}
+  </div>
+{% endif %}

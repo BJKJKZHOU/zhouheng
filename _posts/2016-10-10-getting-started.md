@@ -2,8 +2,8 @@
 layout: post
 title: "Getting Started"
 author: "Paul Le"
-categories: documentation
-tags: [documentation,sample]
+categories: sharing #类别
+tags: [sharing,notes]
 image: city-1.jpg
 ---
 

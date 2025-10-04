@@ -1,4 +1,4 @@
-<div class="related">
+<!-- <div class="related">
   <h2>{{ site.data.settings.related_posts }}</h2>
   {% assign listed_posts_urls = page.url | split: ' ' %}
   <ul class="related-posts">
@@ -17,7 +17,7 @@
                 <div class="related-title">
                   {{ mypost.title }}
                 </div>
-                <!--<small>{{ mypost.date | date: "%B %-d, %Y" }}</small>-->
+                //<--<small>{{ mypost.date | date: "%B %-d, %Y" }}</small>
               </a>
             </h3>
           </li>
@@ -26,4 +26,23 @@
       {% endfor %}
     {% endfor %}
   </ul>
+</div> -->
+
+<div class="related">
+  <h2>{{ site.data.settings.related_posts }}</h2>
+  <div class="posts-grid">
+    {% assign listed_posts_urls = page.url | split: ' ' %}
+    {% for tag in page.tags %}
+      {% for mypost in site.tags[tag] limit:2 %}
+        {% unless listed_posts_urls contains mypost.url %}
+          <a class="post-link" href="{{ site.github.url }}{{ mypost.url }}">
+            <div class="featured-post" {% if mypost.image %}style="background-image:url({{ site.github.url }}/assets/img/{{ mypost.image }})"{% endif %}>
+              <h2><span>{{ mypost.title }}</span></h2>
+            </div>
+          </a>
+          {% assign listed_posts_urls = listed_posts_urls | push: mypost.url %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+  </div>
 </div>
