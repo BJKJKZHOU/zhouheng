@@ -1,6 +1,6 @@
 .footer {
-  // 毛玻璃效果
-  background: rgba(255, 255, 255, 0.9);
+  // 毛玻璃效果 - 透明度改为65%
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: $brand-color;
@@ -13,8 +13,8 @@
 }
 @media (max-width: $container-width) {
   .footer {
-    // 毛玻璃效果
-    background: rgba(255, 255, 255, 0.9);
+    // 毛玻璃效果 - 透明度改为65%
+    background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     color: $brand-color;

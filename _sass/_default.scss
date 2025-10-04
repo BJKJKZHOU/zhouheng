@@ -11,18 +11,19 @@
   text-decoration: underline;
 }
 .content-wrapper {
-  padding-top: $header-thickness+10px;
+  padding-top: $header-thickness + 30px;  // 增加上边距，避免与头部重叠
   margin: auto;
   display: block;
   width: $container-width - 20px;
-  // 毛玻璃效果
-  background: rgba(255, 255, 255, 0.85);
+  // 毛玻璃效果 - 透明度改为65%
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  min-height: calc(100vh - #{$header-thickness} - 60px);
+  min-height: calc(100vh - #{$header-thickness} - 90px);  // 调整最小高度
+  margin-top: 20px;  // 增加顶部外边距
 }
 
 @media (max-width: $container-width) {
@@ -32,16 +33,17 @@
     margin-right: auto;
   }
   .content-wrapper {
-    padding-top: $header-thickness+10px;
+    padding-top: $header-thickness + 20px;  // 移动端调整上边距
     margin: auto;
     display: block;
     width: 95vw;
-    // 移动端毛玻璃效果调整
-    background: rgba(255, 255, 255, 0.95);
+    // 移动端毛玻璃效果调整 - 透明度改为65%
+    background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 0;
     padding: 15px;
+    margin-top: 15px;  // 移动端增加顶部外边距
   }
 }
 .content-wrapper h1 {
