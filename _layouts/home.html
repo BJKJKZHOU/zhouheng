@@ -5,7 +5,7 @@ title: Home
 
 
 <div class="posts-grid">
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     {% include featured-post.html %}
   {% endfor %}
 </div>
