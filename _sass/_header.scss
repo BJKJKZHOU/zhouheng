@@ -11,8 +11,8 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.1);
   z-index: 100;
-  // 添加下边框作为隐形的线
-  border-bottom: 1px solid transparent;
+  // 添加下边框作为隐形的线 - 改为半透明边框
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   // 添加下圆角
   border-radius: 0 0 8px 8px;
   // 确保导航栏有明确的边界
@@ -21,6 +21,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // 确保导航栏宽度与内容区域一致
+  max-width: $container-width;
+  box-sizing: border-box;
 }
 
 @media (max-width: $container-width) {
@@ -38,13 +41,16 @@
     box-shadow: 0 5px 6px -6px rgba(0, 0, 0, 0.1);
     z-index: 100;
     // 移动端同样添加下边框和下圆角
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0 0 8px 8px;
     padding: 0 20px;
     // 移动端垂直布局
     flex-direction: column;
     padding: 10px 20px;
     min-height: auto;
+    // 移动端宽度设置
+    max-width: 95vw;
+    box-sizing: border-box;
   }
 }
 

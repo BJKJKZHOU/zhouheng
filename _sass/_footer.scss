@@ -15,6 +15,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // 确保底部宽度与导航栏一致
+  max-width: $container-width;
+  box-sizing: border-box;
 }
 
 @media (max-width: $container-width) {
@@ -31,6 +34,9 @@
     border-radius: 0;
     margin: 0 auto 15px;
     padding: 0 20px;
+    // 移动端宽度设置
+    max-width: 95vw;
+    box-sizing: border-box;
   }
 }
 

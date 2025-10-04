@@ -24,4 +24,27 @@
   {% include google-analytics.html %}
   <!-- Use Jekyll SEO plugin -->
   {% seo %}
+  
+  <!-- 添加滚动效果脚本 -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contentWrapper = document.querySelector('.content-wrapper');
+      const siteHeader = document.querySelector('.site-header');
+      let lastScrollTop = 0;
+      
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const headerBottom = siteHeader.offsetTop + siteHeader.offsetHeight;
+        
+        // 当向上滚动且内容区域到达导航栏底部时
+        if (scrollTop > lastScrollTop && scrollTop > headerBottom) {
+          contentWrapper.classList.add('scrolling-up');
+        } else {
+          contentWrapper.classList.remove('scrolling-up');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    });
+  </script>
 </head>
