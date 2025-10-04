@@ -9,8 +9,9 @@
   line-height: 45px;
   width: $container-width;
   border-radius: 8px 8px 0 0;
-  margin-top: 20px;
+  margin: 20px auto 0;  // 使用margin: auto实现居中
 }
+
 @media (max-width: $container-width) {
   .footer {
     // 毛玻璃效果 - 透明度改为65%
@@ -23,7 +24,7 @@
     line-height: 45px;
     width: 95vw;
     border-radius: 8px 8px 0 0;
-    margin-top: 20px;
+    margin: 20px auto 0;  // 移动端同样使用margin: auto
   }
 }
 .footer a {
