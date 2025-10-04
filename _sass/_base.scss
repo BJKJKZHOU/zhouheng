@@ -1,83 +1,7 @@
-/*
-  Reset some basic elements
-*/
-
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-  margin: 0;
-  padding: 0;
-}
-
-/*
-  Basic styling
-*/
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
-  font-weight: bold;
-  line-height: 1.25;
-  text-rendering: optimizeLegibility;
-}
-
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
-h3 {
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
-}
-h4, h5, h6 {
-  margin-top: 1rem;
-  font-size: 1rem;
-}
-
-/* Body */
-body {
-  font-family: $base-font-family;
-  // 背景图片设置 - 从assets/img/backgrounds文件夹读取
-  background-image: url('../img/backgrounds/backgrounds_picture.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  position: relative;
-  // 为固定头部预留空间
-  padding-top: 0;  // 头部使用fixed定位，不需要body padding
-}
-
-// 毛玻璃效果容器
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  filter: blur(8px);
-  z-index: -1;
-}
-
-// 内容区域的毛玻璃效果
-.container {
-  --container-width: #{$container-width};
-  width: var(--container-width);
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 1;
-}
-
 .content-wrapper {
-  margin-top: 86px; /* 覆盖_base.scss中的padding-top设置 */
-  margin: auto;
+  margin-top: 86px; /* 固定导航栏高度 + 额外间距 */
+  margin-left: auto;
+  margin-right: auto; /* 只设置水平居中，不覆盖垂直margin */
   display: block;
   width: calc(var(--container-width) - 20px);
   // 毛玻璃效果
@@ -88,83 +12,17 @@ body::before {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
   min-height: calc(100vh - #{$header-thickness} - 60px);
-}
-body img {
-  align: middle;
-  margin: 5px auto auto auto;
-  display: block;
-  max-width: 600px;
+  position: relative;
+  z-index: 1; /* 确保在导航栏下方 */
 }
 
-p {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  line-height: 1.65;
-  font-family: $body-font-family;
-}
-
-/* Lists */
-ul, ol, dl {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1.5rem;
-  font-family: $body-font-family;
-}
-
-ol li {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1.5rem;
-}
-
-li {
-  margin-bottom: 1rem;
-}
-
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-bottom: .5rem;
-}
-
-/*
-  Links
-*/
-
-a {
-  color: $brand-color;
-  text-decoration: none;
-}
-
-/*
-  Blockquote
-*/
-
-blockquote {
-  margin: 10px 20px 10px;
-  padding: 0px 15px;
-  border-left: 0.25em solid #ccc;
-  color: #999;
-  line-height: 1.5;
-}
-
-/**
- * Tables
- */
-table {
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-table, th, td {
-  border: 1px solid black;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
+/* 添加移动端适配 */
+@media (max-width: $container-width) {
+  .content-wrapper {
+    margin-top: 76px; /* 移动端调整 */
+    width: 95vw;
+    border-radius: 0;
+    padding: 15px;
+    min-height: calc(100vh - 161px);
+  }
 }
