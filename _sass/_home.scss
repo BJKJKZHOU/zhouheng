@@ -101,7 +101,7 @@
 }
 
 .featured-post span a {
-  color: white;
+  color: $brand-color;
 }
 
 /* 链接交互样式 */
@@ -152,7 +152,7 @@
 }
 
 .pagination-button {
-  color: #666;
+  color: $brand-color;
   border: 1px solid #ddd;
   padding: 8px 16px;
   margin: 4px;
