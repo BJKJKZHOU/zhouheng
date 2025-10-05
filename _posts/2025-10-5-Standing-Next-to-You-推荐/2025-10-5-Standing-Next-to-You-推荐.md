@@ -9,7 +9,7 @@ image: 2025-10-5-Standing-Next-to-You-推荐/RYUJIN_Standing_Next_to_You.png
 
 ## 250920 RYUJIN Standing Next to You
 
-​	在抖音刷到申留真的表演片段，感觉非常的帅，在[YouTube](https://www.youtube.com/)上看了现场视频，果然非常顶，推荐。
+​	在抖音刷到申留真的表演片段，感觉非常的帅，在[YouTube](https://www.youtube.com/)上看了现场视频，果然非常顶，推荐，粉丝的直拍好像更好看。
 
 <div style="display: flex; justify-content: center; margin: 20px 0;">
 <div style="position: relative; width: 100%; max-width: 560px;">
