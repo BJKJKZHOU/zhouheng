@@ -1,5 +1,6 @@
-// Importing Sass/SCSS partials from `sass_dir` (defaults to `_sass`)
-@import "base",
+// 使用@import（向后兼容）
+@import "variables",
+        "base",
         "code",
         "default",
         "footer",

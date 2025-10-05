@@ -1,0 +1,30 @@
+// _variables.scss
+// 基础字体设置
+$base-font-family: 'Roboto', sans-serif !default;
+$body-font-family: 'Roboto', sans-serif !default;
+$code-font-family: "Source Code Pro", monospace !default;
+
+// 颜色变量
+$brand-color: black !default;
+
+// 布局变量
+$container-width: 1100px !default;
+$tablet-width: 600px !default;
+$phone-width: 480px !default;
+$header-thickness: 56px !default;
+
+// 图标和过渡
+$icon-transition-time: 1.0s !default;
+
+// 社交媒体颜色
+$envelope-color: #f39c12 !default;
+$twitter-color: #00aced !default;
+$instagram-color: #375989 !default;
+$github-color: #343434 !default;
+$linkedin-color: #0073a4 !default;
+$facebook-color: #3d5b99 !default;
+$google-color: #e64a41 !default;
+$pinterest-color: #bd081c !default;
+$medium-color: #00AB6C !default;
+$codepen-color: black !default;
+$rss-color: #ff6600 !default;
