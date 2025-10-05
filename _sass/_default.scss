@@ -34,12 +34,13 @@
   margin: auto;
   display: block;
   width: $container-width; // 与导航栏等宽
-  // 毛玻璃效果 - 应用方案一：50%透明度 + 15px模糊
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  
+  // 修复毛玻璃效果 - 确保背景透明度和模糊效果正确
+  background: rgba(255, 255, 255, 0); // 改为全透明
+  backdrop-filter: blur(var(--dynamic-blur, 4px)); // 使用动态模糊值，默认4px
+  -webkit-backdrop-filter: blur(var(--dynamic-blur, 4px)); // Safari支持
   border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   padding: 30px;
   min-height: calc(100vh - 176px);
   z-index: 1;
@@ -48,8 +49,22 @@
   // 确保内容区域宽度不超过导航栏
   max-width: $container-width;
   box-sizing: border-box;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
+  
+  // 添加边框增强效果
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  // 确保毛玻璃效果能够正确显示
+  isolation: isolate; // 创建新的堆叠上下文
 }
+
+// 移除原来的.scrolled-past类，因为现在使用动态模糊值
+// .content-wrapper.scrolled-past {
+//   background: rgba(255, 255, 255, 0); // 滚动时也保持全透明
+//   backdrop-filter: blur(8px); // 滚动后状态调整为8px
+//   -webkit-backdrop-filter: blur(8px);
+//   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+// }
 
 @media (max-width: $container-width) {
   .container {
@@ -70,17 +85,27 @@
     margin: auto;
     display: block;
     width: 95vw; // 移动端与导航栏等宽
-    // 移动端毛玻璃效果调整 - 透明度改为50%
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    
+    // 移动端毛玻璃效果调整
+    background: rgba(255, 255, 255, 0); // 移动端也改为全透明
+    backdrop-filter: blur(var(--dynamic-blur, 4px)); // 移动端使用动态模糊值
+    -webkit-backdrop-filter: blur(var(--dynamic-blur, 4px));
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 20px;
     min-height: calc(100vh - 161px);
     z-index: 1;
     position: relative;
     margin-bottom: 15px;
     max-width: 95vw;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    isolation: isolate;
   }
+  
+  // 移除移动端的.scrolled-past类
+  // .content-wrapper.scrolled-past {
+  //   background: rgba(255, 255, 255, 0); // 移动端滚动时也保持全透明
+  //   backdrop-filter: blur(6px); // 移动端滚动后状态调整为6px
+  //   -webkit-backdrop-filter: blur(6px);
+  // }
 }

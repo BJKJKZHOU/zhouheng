@@ -1,23 +1,24 @@
 .footer {
-  // 毛玻璃效果 - 透明度改为65%
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  // 优化毛玻璃效果 - 完全透明，轻微模糊
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   color: $brand-color;
   text-align: center;
-  min-height: 80px; // 增加最小高度以适应两行布局
-  width: $container-width; // 与导航栏等宽
+  min-height: 80px;
+  width: $container-width;
   border-radius: 8px;
   margin: 0 auto 20px;
-  padding: 15px 20px; // 调整内边距
-  // 修改flex布局为垂直方向
+  padding: 15px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // 确保底部宽度与导航栏一致
   max-width: $container-width;
   box-sizing: border-box;
+  // 保留边框和阴影增强视觉效果
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 // 联系方式区域样式
@@ -42,21 +43,22 @@
 
 @media (max-width: $container-width) {
   .footer {
-    // 毛玻璃效果 - 透明度改为65%
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    // 优化毛玻璃效果 - 移动端同样应用
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     color: $brand-color;
     text-align: center;
-    min-height: 80px; // 移动端同样增加最小高度
+    min-height: 80px;
     line-height: 45px;
-    width: 95vw; // 移动端与导航栏等宽
+    width: 95vw;
     border-radius: 0;
     margin: 0 auto 15px;
     padding: 0 20px;
-    // 移动端宽度设置
     max-width: 95vw;
     box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
   .footer-contact {

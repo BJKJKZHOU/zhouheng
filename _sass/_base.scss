@@ -50,8 +50,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   
-  // 添加半透明背景色提高内容可读性
-  background-color: rgba(255, 255, 255, 0.9);
+  // 移除半透明背景色，让毛玻璃效果更明显
+  background-color: rgba(255, 255, 255, 0); // 改为全透明
   background-blend-mode: overlay;
 }
 body img {

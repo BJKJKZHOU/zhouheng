@@ -8,3 +8,6 @@
 
 // 然后导入其他部分
 @import "-sections-dir";
+
+// 确保footer样式被正确导入 - 使用基于_sass目录的路径
+@import "footer";

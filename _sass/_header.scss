@@ -5,9 +5,14 @@
   top: 0; // 明确指定顶部位置
   left: 50%; // 居中定位
   transform: translateX(-50%); // 向左移动自身宽度的一半实现居中
-  background-color: white;
+  // 修改透明度和磨砂效果
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
+  // 添加边框增强磨砂效果
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 @media (max-width: $container-width) {
   .site-header {
@@ -17,9 +22,14 @@
     top: 0; // 明确指定顶部位置
     left: 50%; // 居中定位
     transform: translateX(-50%); // 向左移动自身宽度的一半实现居中
-    background-color: white;
+    // 修改透明度和磨砂效果
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     box-shadow: 0 5px 6px -6px #bbb;
     z-index: 100;
+    // 添加边框增强磨砂效果
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 .site-header a {

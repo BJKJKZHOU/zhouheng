@@ -17,18 +17,35 @@
       document.addEventListener('DOMContentLoaded', function() {
         const contentWrapper = document.querySelector('.content-wrapper');
         const referenceLine = document.querySelector('.reference-line');
-        const referenceLinePosition = 56; // 导航栏高度
         
         function checkScrollPosition() {
+          // 获取屏幕高度
+          const screenHeight = window.innerHeight;
+          // 计算滚动阈值
+          const threshold1 = screenHeight * 0.4; // 2/5 = 40%
+          const threshold2 = screenHeight * 0.6; // 3/5 = 60%
+          
           // 获取内容区域相对于视窗的位置
           const rect = contentWrapper.getBoundingClientRect();
+          const scrollDistance = -rect.top; // 向上滚动的距离
           
-          // 当内容区域的顶部越过参考线时，添加scrolled-past类
-          if (rect.top < referenceLinePosition) {
-            contentWrapper.classList.add('scrolled-past');
-          } else {
-            contentWrapper.classList.remove('scrolled-past');
+          let blurValue = 4; // 默认模糊强度4px
+          
+          if (scrollDistance > threshold2) {
+            // 超过3/5屏幕区域：模糊8px
+            blurValue = 8;
+          } else if (scrollDistance > threshold1) {
+            // 在2/5到3/5之间：平滑过渡从6px到8px
+            const progress = (scrollDistance - threshold1) / (threshold2 - threshold1);
+            blurValue = 6 + (2 * progress); // 从6px线性过渡到8px
+          } else if (scrollDistance > 0) {
+            // 在0到2/5之间：平滑过渡从4px到6px
+            const progress = scrollDistance / threshold1;
+            blurValue = 4 + (2 * progress); // 从4px线性过渡到6px
           }
+          
+          // 应用动态模糊值
+          contentWrapper.style.setProperty('--dynamic-blur', `${blurValue}px`);
         }
         
         // 监听滚动事件
