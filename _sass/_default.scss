@@ -51,12 +51,6 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-// 当内容区域滚动到导航栏底部时逐渐消失
-.content-wrapper.scrolling-up {
-  opacity: 0.7;
-  transform: translateY(-10px);
-}
-
 @media (max-width: $container-width) {
   .container {
     width: 95vw;

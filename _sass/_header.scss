@@ -3,7 +3,8 @@
   width: $container-width;
   position: fixed;
   top: 0; // 明确指定顶部位置
-  left: 0;
+  left: 50%; // 居中定位
+  transform: translateX(-50%); // 向左移动自身宽度的一半实现居中
   background-color: white;
   box-shadow: 0 5px 6px -6px #bbb;
   z-index: 100;
@@ -14,7 +15,8 @@
     width: 95vw;
     position: fixed;
     top: 0; // 明确指定顶部位置
-    left: 0;
+    left: 50%; // 居中定位
+    transform: translateX(-50%); // 向左移动自身宽度的一半实现居中
     background-color: white;
     box-shadow: 0 5px 6px -6px #bbb;
     z-index: 100;
