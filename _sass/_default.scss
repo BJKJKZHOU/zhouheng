@@ -70,11 +70,12 @@
     margin: auto;
     display: block;
     width: 95vw; // 移动端与导航栏等宽
-    // 移动端毛玻璃效果调整 - 透明度改为65%
-    background: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 0;
+    // 移动端毛玻璃效果调整 - 透明度改为50%
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     padding: 20px;
     min-height: calc(100vh - 161px);
     z-index: 1;
