@@ -236,3 +236,15 @@
     margin: 1px;
   }
 }
+
+
+/* Body */
+body {
+  font-family: $base-font-family;
+  background-image: url('/assets/img/Backgrounds/backgrounds_picture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
