@@ -40,6 +40,8 @@ h4, h5, h6 {
 /* Body */
 body {
   font-family: $base-font-family;
+  // 添加与导航栏高度相等的padding-top，防止内容被导航栏遮挡
+  padding-top: 56px; // 与导航栏高度相同
 }
 body img {
   align: middle;
