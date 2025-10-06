@@ -51,7 +51,6 @@
 }
 
 .featured-image img {
-  align: middle;
   margin: 5px auto 25px;
   display: block;
   max-width: 600px;
@@ -109,7 +108,6 @@
   }
   
   .featured-image img {
-    align: middle;
     margin: 5px auto 25px;
     display: block;
     max-width: 90%; // 改为百分比
@@ -130,7 +128,6 @@
   }
   
   .featured-image img {
-    align: middle;
     margin: 5px auto 25px;
     display: block;
     max-width: 95%; // 改为百分比
@@ -170,64 +167,7 @@
   }
 }
 
-.post-share {
-
-}
 
 .sharing-icons a {
   padding-right: 10px;
-}
-
-/*
-  Related Posts
-*/
-
-.related {
-  padding-bottom: 1rem;
-}
-
-.related ul, ol, dl {
-  margin: 0px;
-}
-
-.related-posts {
-  padding: 10px 0px 10px;
-  list-style: none;
-  display: inline-block;
-}
-
-.related-thumbnail {
-  position: relative;
-  width: 600px;
-  height: 200px;
-  overflow: hidden;
-}
-
-.related img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: auto;
-  width: 600px;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-}
-
-.related-title {
-  float: right;
-  padding-bottom: .5rem;
-  font-family: $base-font-family;
-}
-
-@media (max-width: $container-width) {
-  .related-thumbnail{
-    width: 90%; // 改为百分比
-  }
-}
-
-@media (max-width: $tablet-width) {
-  .related-thumbnail{
-    width: 95%; // 改为百分比
-  }
 }
