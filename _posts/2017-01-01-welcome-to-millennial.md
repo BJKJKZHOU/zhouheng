@@ -3,7 +3,7 @@ layout: post
 title: "Welcome to Millennial!"
 author: "Paul Le"
 categories: sharing
-tags: [sharing,notes]
+tags: [sharing]
 image: cuba-1.jpg
 ---
 

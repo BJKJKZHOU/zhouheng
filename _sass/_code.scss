@@ -5,8 +5,10 @@ pre {
 code {
   padding: .25em .5em;
   font-size: .8rem;
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.65); /* 浅灰色 #f5f5f5 65% 透明度 */
   border-radius: 3px;
+  backdrop-filter: blur(8px); /* 8px 模糊度 */
+  -webkit-backdrop-filter: blur(8px); /* Safari 支持 */
 }
 pre {
   display: block;
@@ -19,13 +21,17 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.65); /* 浅灰色 #f5f5f5 65% 透明度 */
+  backdrop-filter: blur(8px); /* 8px 模糊度 */
+  -webkit-backdrop-filter: blur(8px); /* Safari 支持 */
 }
 pre code {
   padding: 0;
   font-size: 100%;
   color: inherit;
   background-color: transparent;
+  backdrop-filter: none; /* 内部代码不需要模糊效果 */
+  -webkit-backdrop-filter: none;
 }
 
 /* Pygments via Jekyll */
