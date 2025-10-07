@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   {% include head.html %}
-  <body>
+  <body class="{% if page.layout == 'post' %}post-{{ page.categories[0] | default: 'default' }}{% elsif page.category %}category-{{ page.category }}{% elsif page.title %}page-{{ page.title | slugify }}{% else %}home-page{% endif %}">
     <div class="container">
       {% include header.html %}
       <!-- 在导航栏下方添加隐形参考线 -->

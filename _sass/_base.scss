@@ -40,20 +40,67 @@ h4, h5, h6 {
 /* Body */
 body {
   font-family: $base-font-family;
-  // 添加与导航栏高度相等的padding-top，防止内容被导航栏遮挡
-  padding-top: 56px; // 与导航栏高度相同
+  padding-top: 56px;
   
-  // 添加背景图片设置
+  // 默认背景图片
   background-image: url('../img/backgrounds/backgrounds_picture.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   
-  // 移除半透明背景色，让毛玻璃效果更明显
-  background-color: rgba(255, 255, 255, 0); // 改为全透明
+  background-color: rgba(255, 255, 255, 0);
   background-blend-mode: overlay;
+  
+  // 添加动态文字颜色调整
+  color: #333; // 默认文字颜色
+  
+  // 深色背景检测
+  &[style*="background-color: rgba(0, 0, 0"] {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  // 浅色背景检测
+  &[style*="background-color: rgba(255, 255, 255"] {
+    color: rgba(0, 0, 0, 0.9);
+  }
 }
+
+// 为所有内容容器添加混合模式
+.content {
+  mix-blend-mode: difference;
+}
+
+// 关于页面背景 - 支持中文和英文类名
+body.page-about,
+body.page-关于 {
+  background-image: url('../img/backgrounds/about-天空倒影.png');
+}
+
+// 随笔栏目背景
+body.category-jottings,
+body.post-jottings {
+  background-image: url('../img/backgrounds/jottings-picture.jpg');
+}
+
+// 文档笔记栏目背景
+body.category-notes,
+body.post-notes {
+  background-image: url('../img/backgrounds/notes-Fate系列.png');
+}
+
+// 项目栏目背景
+body.category-projects,
+body.post-projects {
+  background-image: url('../img/backgrounds/project-围墙白花-夜空-晨曦.png');
+}
+
+// 分享栏目背景
+body.category-sharing,
+body.post-sharing {
+  background-image: url('../img/backgrounds/sharing_picture.png');
+}
+
 body img {
   align: middle;
   margin: 5px auto auto auto;
